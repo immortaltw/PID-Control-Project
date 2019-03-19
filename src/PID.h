@@ -1,6 +1,9 @@
 #ifndef PID_H
 #define PID_H
 
+#include <numeric>
+#include <vector>
+
 class PID {
  public:
   /**
@@ -17,7 +20,7 @@ class PID {
    * Initialize PID.
    * @param (Kp_, Ki_, Kd_) The initial PID coefficients
    */
-  void Init(double Kp_, double Ki_, double Kd_);
+  void Init(std::vector<double> &k);
 
   /**
    * Update the PID error variables given cross track error.
@@ -31,7 +34,13 @@ class PID {
    */
   double TotalError();
 
+  bool Twiddle(double cte);
+
+  bool ShouldSendMsg() { return iter < tuning_samples; }
+
  private:
+  typedef std::vector<double> VD;
+
   /**
    * PID Errors
    */
@@ -39,9 +48,21 @@ class PID {
   double i_error;
   double d_error;
 
+  VD dp;
+  int dp_len = 3;
+  int cur_idx = 0;
+  int tuning_samples = 800;
+  int iter = 0;
+  int state = 0;
+  double accumulated_error = 0.0;
+
+  double tol = 0.001;
+  double best_error = std::numeric_limits<double>::max();
+
   /**
    * PID Coefficients
-   */ 
+   */
+  VD K;
   double Kp;
   double Ki;
   double Kd;

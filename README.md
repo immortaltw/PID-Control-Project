@@ -27,7 +27,6 @@ The goal of this project is to use PID control to drive the car safely in the si
     Some function signatures have changed in v0.14.x. See [this PR](https://github.com/udacity/CarND-MPC-Project/pull/3) for more details.
 * Simulator. You can download these from the [project intro page](https://github.com/udacity/self-driving-car-sim/releases) in the classroom.
 
-Fellow students have put together a guide to Windows set-up for the project [here](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/files/Kidnapped_Vehicle_Windows_Setup.pdf) if the environment you have set up for the Sensor Fusion projects does not work for this project. There's also an experimental patch for windows in this [PR](https://github.com/udacity/CarND-PID-Control-Project/pull/3).
 
 ## Basic Build Instructions
 
@@ -38,9 +37,7 @@ Fellow students have put together a guide to Windows set-up for the project [her
 
 ## Result
 
-<video width="540" height="320" controls>
-  <source src="./PID.mp4" type="video/mp4">
-</video>
+<iframe src="https://player.vimeo.com/video/325150463" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 ## Discussion
 

@@ -37,7 +37,7 @@ The goal of this project is to use PID control to drive the car safely in the si
 
 ## Result
 
-<iframe src="https://player.vimeo.com/video/325150463" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+![Result](./PID.gif)
 
 ## Discussion
 
